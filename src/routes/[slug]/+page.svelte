@@ -2,7 +2,11 @@
 	import type { Post } from '$lib/types'
 	import { formatDate } from '$lib/utils'
 
-	export let data
+	export let data: {
+		url: string
+		content: ConstructorOfATypedSvelteComponent
+		meta: Post
+	}
 </script>
 
 <svelte:head>

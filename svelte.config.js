@@ -34,6 +34,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		prerender: {
+			handleHttpError: 'warn',
 			entries: ['*', '/first-post', '/second-post']
 		}
 	}
