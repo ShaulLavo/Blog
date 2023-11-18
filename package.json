@@ -29,6 +29,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-auto": "^2.1.1",
 		"lucide-svelte": "^0.292.0",
 		"mdsvex": "^0.11.0",
 		"open-props": "^1.6.12",

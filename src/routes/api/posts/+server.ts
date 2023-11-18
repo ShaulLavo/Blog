@@ -8,7 +8,8 @@ async function getPosts() {
 		const file = paths[path]
 		let slug = path.split('/').at(-1)
 		slug = slug?.replace('.md', '')
-		if (file && file instanceof Object && 'metadata' in file && slug) {
+
+		if (file && typeof file == 'object' && 'metadata' in file && slug) {
 			const metadata = file.metadata as Omit<Post, 'slug'>
 			const post = { ...metadata, slug } satisfies Post
 			post.published && posts.push(post)
@@ -19,6 +20,10 @@ async function getPosts() {
 }
 
 export async function GET() {
-	const posts = await getPosts()
-	return json(posts)
+	try {
+		const posts = await getPosts()
+		return json(posts)
+	} catch (e) {
+		console.log(e)
+	}
 }

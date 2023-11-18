@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
 import { mdsvex, escapeSvelte } from 'mdsvex';
@@ -33,10 +33,6 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
-		prerender: {
-			handleHttpError: 'warn',
-			entries: ['*', '/first-post', '/second-post']
-		}
 	}
 };
 

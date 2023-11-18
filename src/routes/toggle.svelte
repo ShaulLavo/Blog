@@ -2,7 +2,6 @@
 	import { fly } from 'svelte/transition'
 	import { Moon, Sun } from 'lucide-svelte'
 	import { theme, toggleTheme } from '$lib/theme'
-	console.log($theme)
 	//TODO add animation to to toggle in:fly={{ y: 10 }} out:fly={{ y: 10 }}
 </script>
 
