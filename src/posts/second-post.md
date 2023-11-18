@@ -6,7 +6,7 @@ categories: ['TypeScript', 'Web Development']
 published: true
 ---
 
-## Table of Contents
+## Contents
 
 # Blog Post 2: Building a Web App with TypeScript
 

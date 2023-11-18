@@ -4,26 +4,28 @@ html {
 	--font-mono: 'GeistMono', 'Roboto Mono', 'Courier New', Courier, monospace;
 	--font-serif: 'SourceSerif', Georgia, 'Times New Roman', serif;
 	/* dark */
-	--brand-dark: var(--orange-3);
-	--text-1-dark: var(--gray-3);
-	--text-2-dark: var(--gray-5);
+	--brand-dark: var(--sand-2);
+	--text-1-dark: var(--sand-1);
+	--text-2-dark: var(--gray-4);
 	--surface-1-dark: var(--gray-12);
 	--surface-2-dark: var(--gray-11);
 	--surface-3-dark: var(--gray-10);
 	--surface-4-dark: var(--gray-9);
-	--background-dark: var(--gradient-8);
+	--background-dark: var(--gray-11);
 	--border-dark: var(--gray-9);
 
 	/* light */
-	--brand-light: var(--orange-10);
-	--text-1-light: var(--gray-8);
-	--text-2-light: var(--gray-7);
-	--surface-1-light: var(--gray-0);
-	--surface-2-light: var(--gray-1);
-	--surface-3-light: var(--gray-2);
-	--surface-4-light: var(--gray-3);
-	--background-light: none;
-	--border-light: var(--gray-4);
+	--brand-light: var(--gray-12);
+	--text-1-light: var(--gray-12);
+	--text-2-light: var(--gray-10);
+	--surface-1-light: var(--stone-0);
+	--surface-2-light: var(--stone-1);
+	--surface-3-light: var(--stone-2);
+	--surface-4-light: var(--stone-3);
+	--border-light: var(--stone-4);
+	--background-light: var(--stone-3);
+
+	--link-visited: var(--pink-2);
 }
 
 :root {
@@ -130,28 +132,29 @@ li {
 	color: var(--text-1);
 }
 
-.prose :is(h2, h3, h4, h5, h6) {
+.mark-down :is(h2, h3, h4, h5, h6) {
 	margin-top: var(--size-8);
 	margin-bottom: var(--size-3);
 }
 
-.prose p:not(:is(h2, h3, h4, h5, h6) + p) {
+.mark-down p:not(:is(h2, h3, h4, h5, h6) + p) {
 	margin-top: var (--size-7);
 }
 
-.prose :is(ul, ol) {
+.mark-down :is(ul, ol) {
 	list-style-type: '💩';
 	padding-left: var(--size-5);
 }
 
-.prose :is(ul, ol) li {
+.mark-down :is(ul, ol) li {
 	margin-block: var(--size-2);
 	padding-inline-start: var(--size-2);
+	color: rgb(196, 204, 213);
 }
 
-.prose pre {
-	/* background-color: red; */
-	max-inline-size: 100%;
+.mark-down pre {
+	max-inline-size: var(--size-content-3);
+
 	padding: var(--size-3);
 	border-radius: 8px;
 	tab-size: 2;

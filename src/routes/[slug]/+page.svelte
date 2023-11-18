@@ -27,14 +27,14 @@
 		{/each}
 	</div>
 
-	<div class="prose">
+	<div class="mark-down">
 		<svelte:component this={data.content}></svelte:component>
 	</div>
 </article>
 
 <style>
 	article {
-		max-inline-size: var(--size-content-3);
+		max-inline-size: var(--size-content-4);
 		margin-inline: auto;
 	}
 	h1 {

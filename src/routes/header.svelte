@@ -51,5 +51,10 @@
 			gap: var(--size-7);
 			margin-block: 0;
 		}
+		b {
+			font-size: var(--font-size-fluid-2);
+			font-weight: var(--font-weight-4);
+			/* font-family: var(--font-sans); */
+		}
 	}
 </style>

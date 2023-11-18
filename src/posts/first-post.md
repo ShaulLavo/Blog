@@ -6,7 +6,7 @@ categories: ['TypeScript', 'Programming']
 published: true
 ---
 
-## Table of Contents
+## Contents
 
 # Blog Post 1: Introduction to TypeScript
 
