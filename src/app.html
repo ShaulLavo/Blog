@@ -2,9 +2,19 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<link rel="icon" href="https://fav.farm/💩" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
+
+		<script type="module">
+			const theme = localStorage.getItem('color-scheme')
+			if (theme) document.documentElement.setAttribute('color-scheme', theme)
+			else {
+				const defaultTheme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+				document.documentElement.setAttribute('color-scheme', defaultTheme)
+				localStorage.setItem('color-scheme', defaultTheme)
+			}
+		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>
