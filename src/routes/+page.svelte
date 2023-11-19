@@ -2,7 +2,9 @@
 	import type { Post } from '$lib/types'
 	import * as config from '$lib/config'
 	import { formatDate } from '$lib/utils'
-	export let data
+	import { getHighQualityUrl } from '$lib/cloudinary'
+	import { constants } from '$lib/constants'
+	export let data: { posts: Post[] }
 </script>
 
 <svelte:head>
@@ -19,9 +21,24 @@
 			</li>
 		{/each}
 	</ul>
+	<div class="image-container">
+		<img alt="img" loading="lazy" src={getHighQualityUrl(constants.randomImageName)} />
+	</div>
 </section>
 
 <style>
+	section {
+		display: grid;
+		/* gap: var(--size-7); */
+		grid-template-columns: 1fr 1fr;
+	}
+	.image-container {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 	.posts {
 		display: grid;
 		gap: var(--size-7);
@@ -41,6 +58,6 @@
 		color: var(--text-2);
 	}
 	.description {
-		margin-top: (var(--size-3));
+		margin-top: var(--size-3);
 	}
 </style>
