@@ -2,8 +2,9 @@
 	import type { Post } from '$lib/types'
 	import * as config from '$lib/config'
 	import { formatDate } from '$lib/utils'
-	import { getHighQualityUrl } from '$lib/cloudinary'
+	import { getImageData } from '$lib/cloudinary'
 	import { constants } from '$lib/constants'
+	import AutoLqipImage from './autoLqipImage.svelte'
 	export let data: { posts: Post[] }
 </script>
 
@@ -22,7 +23,7 @@
 		{/each}
 	</ul>
 	<div class="image-container">
-		<img alt="img" loading="lazy" src={getHighQualityUrl(constants.randomImageName)} />
+		<AutoLqipImage {...getImageData(constants.randomImageName, 800)} />
 	</div>
 </section>
 

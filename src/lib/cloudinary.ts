@@ -31,10 +31,11 @@ function getHighQualityUrl(imageId: string, width?: number, height?: number): st
 }
 
 function getLqipUrl(imageId: string): string {
-	return cld.image(imageId).resize(scale(50)).quality('auto:low').effect(blur(1000)).toURL()
+	return cld.image(imageId).resize(scale(150)).quality('auto:low').toURL()
 }
 
 function getImageData(imageId: string, width?: number, height?: number): ImageData {
+	console.log(width)
 	return {
 		highQualityUrl: getHighQualityUrl(imageId, width, height),
 		lqipUrl: getLqipUrl(imageId)
