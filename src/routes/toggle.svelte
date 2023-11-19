@@ -5,14 +5,14 @@
 	//TODO add animation to to toggle in:fly={{ y: 10 }} out:fly={{ y: 10 }}
 </script>
 
-<button on:click={toggleTheme} in:fly={{ y: 10 }} aria-label="Toggle theme">
+<button on:click={toggleTheme} aria-label="Toggle theme">
 	{#if $theme === 'dark'}
-		<div>
+		<div in:fly={{ y: 10 }}>
 			<Sun />
 			<span>Light</span>
 		</div>
 	{:else if $theme === 'light'}
-		<div>
+		<div in:fly={{ y: 10 }}>
 			<Moon />
 			<span>Dark</span>
 		</div>

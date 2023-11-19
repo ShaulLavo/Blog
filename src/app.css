@@ -26,6 +26,8 @@ html {
 	--background-light: var(--stone-3);
 
 	--link-visited: var(--pink-2);
+	transition: background-color 0.5s var(--ease-3);
+	transition: color 0.5s var(--ease-3);
 }
 
 :root {

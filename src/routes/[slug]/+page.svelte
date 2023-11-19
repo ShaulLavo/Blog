@@ -35,7 +35,6 @@
 <style>
 	article {
 		max-inline-size: var(--size-content-4);
-		margin-inline: auto;
 	}
 	h1 {
 		text-transform: capitalize;

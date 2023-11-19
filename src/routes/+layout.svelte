@@ -25,7 +25,7 @@
 <style>
 	.layout {
 		height: 100%;
-		max-inline-size: 1440px;
+		max-inline-size: 1600px;
 		display: grid;
 		grid-template-rows: auto 1fr auto;
 		margin-inline: auto;
@@ -36,7 +36,7 @@
 		padding-block: var(--size-9);
 	}
 
-	@media (min-width: 1440px) {
+	@media (min-width: 1600px) {
 		.layout {
 			padding-inline: 0;
 		}
