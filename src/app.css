@@ -4,32 +4,36 @@ html {
 	--font-mono: 'GeistMono', 'Roboto Mono', 'Courier New', Courier, monospace;
 	--font-serif: 'SourceSerif', Georgia, 'Times New Roman', serif;
 	/* dark */
-	--brand-dark: var(--sand-2);
-	--text-1-dark: var(--sand-1);
-	--text-2-dark: var(--sand-3);
+	--brand-dark: var(--stone-2);
+	--text-1-dark: var(--stone-1);
+	--text-2-dark: var(--stone-2);
 	--text-3-dark: var(--gray-4);
-	--surface-1-dark: var(--gray-12);
-	--surface-2-dark: var(--gray-11);
-	--surface-3-dark: var(--gray-10);
-	--surface-4-dark: var(--gray-9);
-	--background-dark: var(--gray-11);
-	--border-dark: var(--gray-9);
+	--surface-1-dark: var(--gray-9);
+	--surface-2-dark: var(--gray-10);
+	--surface-3-dark: var(--gray-11);
+	--surface-4-dark: var(--stone-12);
+	--background-dark: var(--gray-12);
+	--border-dark: var(--gray-8);
 
 	/* light */
 	--brand-light: var(--gray-12);
 	--text-1-light: var(--gray-12);
 	--text-2-light: var(--gray-10);
-	--surface-1-light: var(--stone-0);
-	--surface-2-light: var(--stone-1);
-	--surface-3-light: var(--stone-2);
-	--surface-4-light: var(--stone-3);
+	--surface-1-light: var(--stone-3);
+	--surface-2-light: var(--stone-3);
+	--surface-3-light: var(--stone-4);
+	--surface-4-light: var(--stone-5);
 	--border-light: var(--stone-4);
-	--background-light: var(--stone-3);
+	--background-light: var(--stone-1);
 
 	transition: background-color 0.5s var(--ease-3);
 	transition: color 0.5s var(--ease-3);
 }
 
+.shiki {
+	font-size: var(--font-size-2);
+	font-weight: 500;
+}
 :root {
 	color-scheme: dark;
 
@@ -43,6 +47,18 @@ html {
 	--background: var(--background-dark);
 	--border: var(--border-dark);
 	--link-visited: var(--text-2-dark);
+
+	--shiki-color-text: var(--text-1-dark);
+	--shiki-color-background: var(--s);
+	--shiki-token-constant: #79c0ff;
+	--shiki-token-string: #a5d6ff;
+	--shiki-token-comment: #8b949e;
+	--shiki-token-keyword: #ff7b72;
+	--shiki-token-parameter: var(--text-1-dark);
+	--shiki-token-function: #d2a8ff;
+	--shiki-token-string-expression: #a5d6ff;
+	--shiki-token-punctuation: var(--text-1-dark);
+	--shiki-token-link: #000012;
 }
 
 @media (prefers-color-scheme: light) {
@@ -59,6 +75,18 @@ html {
 		--background: var(--background-light);
 		--border: var(--border-light);
 		--link-visited: var(--gray-8);
+
+		--shiki-color-text: var(--text-1-light);
+		--shiki-color-background: var(--surface-1);
+		--shiki-token-constant: #0550ae;
+		--shiki-token-string: var(--text-1-light);
+		--shiki-token-comment: #6e7781;
+		--shiki-token-keyword: #cf222e;
+		--shiki-token-parameter: var(--text-1-light);
+		--shiki-token-function: #8250df;
+		--shiki-token-string-expression: #0a3069;
+		--shiki-token-punctuation: var(--text-1-light);
+		--shiki-token-link: #000012;
 	}
 }
 
@@ -74,6 +102,19 @@ html {
 	--surface-4: var(--surface-4-dark);
 	--background: var(--background-dark);
 	--border: var(--border-dark);
+	--link-visited: var(--text-2-dark);
+
+	--shiki-color-text: var(--text-1-dark);
+	--shiki-color-background: var(--surface-1);
+	--shiki-token-constant: #79c0ff;
+	--shiki-token-string: #a5d6ff;
+	--shiki-token-comment: #8b949e;
+	--shiki-token-keyword: #ff7b72;
+	--shiki-token-parameter: var(--text-1-dark);
+	--shiki-token-function: #d2a8ff;
+	--shiki-token-string-expression: #a5d6ff;
+	--shiki-token-punctuation: var(--text-1-dark);
+	--shiki-token-link: #000012;
 }
 
 [color-scheme='light'] {
@@ -88,11 +129,26 @@ html {
 	--surface-4: var(--surface-4-light);
 	--background: var(--background-light);
 	--border: var(--border-light);
+	--link-visited: var(--gray-8);
+
+	--shiki-color-text: var(--text-1-light);
+	--shiki-color-background: var(--surface-1);
+	--shiki-token-constant: #0550ae;
+	--shiki-token-string: var(--text-1-light);
+	--shiki-token-comment: #6e7781;
+	--shiki-token-keyword: #cf222e;
+	--shiki-token-parameter: var(--text-1-light);
+	--shiki-token-function: #8250df;
+	--shiki-token-string-expression: #0a3069;
+	--shiki-token-punctuation: var(--text-1-light);
+	--shiki-token-link: #000012;
 }
 
 html,
 body {
-	height: 100%;
+	/* height: 100%; */
+	overflow: hidden;
+	box-sizing: border-box;
 }
 
 html {
@@ -100,8 +156,12 @@ html {
 	accent-color: var(--link);
 	background-image: var(--background);
 	background-attachment: fixed;
+	background-color: var(--background);
 }
 
+a {
+	text-decoration-color: var(--text-2);
+}
 img {
 	border-radius: var(--radius-3);
 	/* filter: hue-rotate(180deg); */
@@ -163,6 +223,26 @@ li {
 	padding: var(--size-3);
 	border-radius: 8px;
 	tab-size: 2;
+}
+
+html.lenis {
+	height: auto;
+}
+
+.lenis.lenis-smooth {
+	scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+	pointer-events: none;
 }
 
 /* Source Serif 4 Font Family */

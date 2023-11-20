@@ -35,9 +35,10 @@
 		top: 0;
 		left: 0;
 		flex: 1;
+		object-fit: contain;
 	}
 	.liqp {
 		/* position: relative; */
-		object-fit: fill;
+		/* object-fit: fill; */
 	}
 </style>

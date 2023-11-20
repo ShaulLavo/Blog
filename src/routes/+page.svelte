@@ -5,6 +5,7 @@
 	import { getImageData } from '$lib/cloudinary'
 	import { constants } from '$lib/constants'
 	import AutoLqipImage from './autoLqipImage.svelte'
+	import Bento from './bentoContainer.svelte'
 	export let data: { posts: Post[] }
 </script>
 
@@ -12,20 +13,7 @@
 	<title>{config.title}</title>
 </svelte:head>
 
-<section>
-	<ul class="posts">
-		{#each data.posts as post}
-			<li class="post">
-				<a href={post.slug} class="title">{post.title}</a>
-				<p class="date">{formatDate(post.date)}</p>
-				<p class="description">{post.description}</p>
-			</li>
-		{/each}
-	</ul>
-	<div class="image-container">
-		<AutoLqipImage {...getImageData(constants.randomImageName, 800)} />
-	</div>
-</section>
+<Bento posts={data.posts} />
 
 <style>
 	section {
@@ -43,22 +31,5 @@
 	.posts {
 		display: grid;
 		gap: var(--size-7);
-	}
-	.post {
-		max-inline-size: var(--size-content-3);
-	}
-	.post:not(:last-child) {
-		border-bottom: 1px solid var(--border);
-		padding-bottom: var(--size-7);
-	}
-	.title {
-		font-size: var(--font-size-fluid-3);
-		text-transform: capitalize;
-	}
-	.date {
-		color: var(--text-2);
-	}
-	.description {
-		margin-top: var(--size-3);
 	}
 </style>

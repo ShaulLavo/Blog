@@ -1,6 +1,6 @@
 <script lang="ts">
 	import * as config from '$lib/config'
-	import Toggle from './toggle.svelte'
+	import Toggle from './toggleTheme.svelte'
 </script>
 
 <nav>
@@ -17,9 +17,9 @@
 		<li>
 			<a href="/contact">Contact</a>
 		</li>
-		<li>
+		<!-- <li>
 			<a href="/rss.xml" target="_blank">RSS</a>
-		</li>
+		</li> -->
 	</ul>
 
 	<!-- Theme -->
@@ -28,7 +28,7 @@
 
 <style>
 	nav {
-		padding-block: var(--size-7);
+		padding: var(--size-7);
 	}
 
 	.links {

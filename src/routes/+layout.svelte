@@ -1,11 +1,13 @@
 <script lang="ts">
+	import { lenisStore } from '$lib/lenis'
+	import 'open-props/buttons'
+	import 'open-props/normalize'
+	import 'open-props/style'
+	import { onMount } from 'svelte'
+	import '../app.css'
 	import Footer from './footer.svelte'
 	import Header from './header.svelte'
 	import PageTransition from './transition.svelte'
-	import 'open-props/style'
-	import 'open-props/normalize'
-	import 'open-props/buttons'
-	import '../app.css'
 
 	export let data
 </script>
@@ -24,7 +26,7 @@
 
 <style>
 	.layout {
-		height: 100%;
+		/* height: 100%; */
 		max-inline-size: 1600px;
 		display: grid;
 		grid-template-rows: auto 1fr auto;
@@ -33,7 +35,7 @@
 	}
 
 	main {
-		padding-block: var(--size-9);
+		padding-block: var(--size-7);
 	}
 
 	@media (min-width: 1600px) {

@@ -14,5 +14,5 @@ export type Post = {
 	categories: categories[]
 	published: boolean
 	description: string
-	// image: string;
+	image: string
 }
